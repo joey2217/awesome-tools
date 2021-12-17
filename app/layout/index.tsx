@@ -1,3 +1,13 @@
-export default function Layout({ children }: { children: React.ReactNode }) {
-  return <div className="remix-app">{children}</div>
+import Header from './Header'
+import { Layout } from 'antd'
+
+const { Content } = Layout
+
+export default function AppLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <Layout>
+      <Header/>
+      <Content>{children}</Content>
+    </Layout>
+  )
 }

@@ -11,17 +11,19 @@ import type { LinksFunction, MetaFunction } from 'remix'
 import Layout from './layout'
 
 import globalStylesUrl from '~/styles/global.css'
-import darkStylesUrl from '~/styles/dark.css'
+import antdStylesUrl from 'antd/dist/antd.css'
+import antdDarkStylesUrl from 'antd/dist/antd.dark.css'
 
 // https://remix.run/api/app#links
 export let links: LinksFunction = () => {
   return [
-    { rel: 'stylesheet', href: globalStylesUrl },
+    { rel: 'stylesheet', href: antdStylesUrl },
     {
       rel: 'stylesheet',
-      href: darkStylesUrl,
+      href: antdDarkStylesUrl,
       media: '(prefers-color-scheme: dark)',
     },
+    { rel: 'stylesheet', href: globalStylesUrl },
   ]
 }
 
